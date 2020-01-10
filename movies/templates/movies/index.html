@@ -1,0 +1,77 @@
+{% load static %}
+{% static "" as staticUrl %}
+<title> nutter Movies</title>
+<link type="text/css" rel="stylesheet" href="{{ staticUrl }}movies/css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="{{ staticUrl }}movies/css/movies.css" />
+<script src="{{ staticUrl }}movies/js/nutter.js"></script>
+<script src="{{ staticUrl }}movies/js/all.js"></script>
+
+<div id="nutter" class="movies">
+
+	<div id="tabs" class="tab">
+		<div class="row">
+		  <button class="tabLinks" onclick="nutter.openTab(event, 'player')">Player</button>
+		  <button class="tabLinks active" onclick="nutter.openTab(event, 'catalog')">Movies</button>
+		  <button class="tabLinks" onclick="nutter.openTab(event, 'admin')">Admin</button>
+		  <p id="logo"><strong>nutter</strong>: movies</p>
+		</div>
+		<div id="selectors" class="row">
+	  	<div id="genreDropdown" class="selector"></div>
+	  	<div id="directorDropdown" class="selector"></div>
+	  	<div id="languageDropdown" class="selector"></div>
+	  	<div id="countryDropdown" class="selector"></div>
+	  	<div id="jump">
+		  	<p>A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z</p>
+	  	</div>
+		</div>
+	</div>
+
+	<div id="player" class="tabContent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Player</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div id="movieSingle"><p>Choose a movie from the catalog and it will appear here.</p></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="catalog" class="tabContent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Movie Catalog</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div id="movieGrid"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="admin" class="tabContent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Admin</h1>
+					<div id="movieAdmin">
+						<label>IMDB API Key:</label>
+						<input></input>
+						<label>Local Movie Directory:</label>
+						<input></input>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		{% block javascript %}
+  <script>
+    nutter.init();
+  </script>
+{% endblock %}
+		
+</div>

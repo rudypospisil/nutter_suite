@@ -1,0 +1,137 @@
+#nutter .container { max-width: 100%; }
+
+#nutter #movieGrid,
+#nutter #movieSingle { display: contents; }
+#nutter #movieSingle p { margin-bottom: 0; }
+
+#nutter #player {
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+}
+#nutter #catalog {
+	background-color: rgba(0,0,0,1);
+	color: #fff;
+}
+
+#nutter #movieSingle .img-fluid { border: solid 1px grey; }
+
+#nutter #movieSingle #details,
+#nutter #movieSingle #editor {
+	margin-top: 3.2rem;
+}
+
+#nutter #movieSingle #editor {
+	background-color: rgba(0,0,0,0.1);
+}
+
+#nutter p#logo {
+	position: absolute;
+  right: 20px;
+  color: #000;
+  top: -14px;
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+}
+
+.poster { overflow: hidden; }
+.poster img { border: solid 1px #000; }
+
+.active { display: block; }
+.inactive { display: none; }
+
+.bold { font-weight: bold; }
+
+button.play {
+	cursor: pointer;
+	font-size: .5em;
+	width: 100%; 
+	background-color: rgba(255,255,255,0.95); 
+	margin-bottom: 1.2rem;
+}
+button.play:hover { 
+	background-color: rgba(255,255,255,0.65); 
+	}
+
+#nutter #catalog p.title {
+  font-weight: bold;
+  margin: 1rem 0 0;
+}
+
+.posterTitle {
+  visibility: hidden;
+  font-size: 1.2rem;
+  width: 200px;
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  z-index: 1;
+  /margin-top: -100px;
+  margin-left: -20px;
+}
+.posterPlot {
+	font-size: 0.9rem;
+}
+
+.poster:hover .posterTitle {
+  visibility: visible;
+}
+
+
+
+
+
+/* Style the tab */
+#tabs {
+	position: fixed;
+	width: 100%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  /margin-top: -50px;
+  z-index: 10000;
+}
+
+/* Style the buttons inside the tab */
+#tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+#tabs button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+#tabs button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabContent {
+	/margin-top: 50px;
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
