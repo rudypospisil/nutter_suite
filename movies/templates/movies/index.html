@@ -9,30 +9,17 @@
 <div id="nutter" class="movies">
 
 	<div id="tabs" class="tab">
-		<div class="row">
-		  <button class="tabLinks" onclick="nutter.openTab(event, 'player')">Player</button>
-		  <button class="tabLinks active" onclick="nutter.openTab(event, 'catalog')">Movies</button>
-		  <button class="tabLinks" onclick="nutter.openTab(event, 'admin')">Admin</button>
-		  <p id="logo"><strong>nutter</strong>: movies</p>
-		</div>
-		<div id="selectors" class="row">
-	  	<div id="genreDropdown" class="selector"></div>
-	  	<div id="directorDropdown" class="selector"></div>
-	  	<div id="languageDropdown" class="selector"></div>
-	  	<div id="countryDropdown" class="selector"></div>
-	  	<div id="jump">
-		  	<p>A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z</p>
-	  	</div>
-		</div>
+	  <button class="tabLinks" onclick="nutter.openTab(event, 'player')">Player</button>
+	  <button class="tabLinks active" onclick="nutter.openTab(event, 'catalog')">Catalog</button>
+	  <button class="tabLinks" onclick="nutter.openTab(event, 'admin')">Admin</button>
+	  <p id="logo"><strong>nutter</strong>: movies</p>
+		<div id="jump">
+	  	<p><a href="#a">A</a> | <a href="#b">B</a> | <a href="#c">C</a> | <a href="#d">D</a> | <a href="#e">E</a> | <a href="#f">F</a> | <a href="#g">G</a> | <a href="#h">H</a> | <a href="#i">I</a> | <a href="#j">J</a> | <a href="#k">K</a> | <a href="#l">L</a> | <a href="#m">M</a></a> | <a href="#n">N</a> | <a href="#o">O</a> | <a href="#p">P</a> | <a href="#q">Q</a> | <a href="#r">R</a> | <a href="#s">S</a> | <a href="#t">T</a> | <a href="#u">U</a> | <a href="#v">V</a> | <a href="#w">W</a> | <a href="#x">X</a> | <a href="#y">Y</a> | <a href="#z">Z</a></p>
+  	</div>
 	</div>
 
 	<div id="player" class="tabContent">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1>Player</h1>
-				</div>
-			</div>
 			<div class="row">
 				<div id="movieSingle"><p>Choose a movie from the catalog and it will appear here.</p></div>
 			</div>
@@ -41,10 +28,11 @@
 
 	<div id="catalog" class="tabContent">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1>Movie Catalog</h1>
-				</div>
+			<div id="selectors" class="row">
+		  	<div id="genreDropdown" class="selector"></div>
+		  	<div id="directorDropdown" class="selector"></div>
+		  	<div id="languageDropdown" class="selector"></div>
+		  	<div id="countryDropdown" class="selector"></div>
 			</div>
 			<div class="row">
 				<div id="movieGrid"></div>
@@ -56,14 +44,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h1>Admin</h1>
 					<div id="movieAdmin">
-						<label>IMDB API Key:</label>
-						<input></input>
-						<label>Local Movie Directory:</label>
-						<input></input>
+						<p>IMDB API Key: {{ imdb_key }}</p>
+						<p>Local Movie Directory: {{ movies_path }}</p>
+						<form id="addMovieForm" action="javascript:nutter.addMovie();"><input type="submit" value="Add a Movie"></form>
 					</div>
 				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div id="addMovie"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="responseMessage"></div>
+				<div id="addMovieResults"></div>
 			</div>
 		</div>
 	</div>

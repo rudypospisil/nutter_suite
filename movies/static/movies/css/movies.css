@@ -1,3 +1,5 @@
+body { background-color: #000; }
+
 #nutter .container { max-width: 100%; }
 
 #nutter #movieGrid,
@@ -13,11 +15,21 @@
 	color: #fff;
 }
 
+#nutter #selectors {
+	margin-left: 30px;
+	right: 0;
+  top: 60;
+  position: absolute;
+}
+#nutter #selectors select {
+	margin-right: 20px;
+}
+
 #nutter #movieSingle .img-fluid { border: solid 1px grey; }
 
 #nutter #movieSingle #details,
 #nutter #movieSingle #editor {
-	margin-top: 3.2rem;
+	margin-top: 1rem;
 }
 
 #nutter #movieSingle #editor {
@@ -47,7 +59,7 @@ button.play {
 	font-size: .5em;
 	width: 100%; 
 	background-color: rgba(255,255,255,0.95); 
-	margin-bottom: 1.2rem;
+	margin-bottom: 1.5rem;
 }
 button.play:hover { 
 	background-color: rgba(255,255,255,0.65); 
@@ -79,9 +91,15 @@ button.play:hover {
   visibility: visible;
 }
 
+#addMovieResults {
+	display: contents;
+}
 
-
-
+#jump {
+  position: absolute;
+  top: 30px;
+  right: 365px;
+}
 
 /* Style the tab */
 #tabs {
@@ -90,7 +108,7 @@ button.play:hover {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-  /margin-top: -50px;
+  margin-top: -80px;
   z-index: 10000;
 }
 
@@ -118,13 +136,16 @@ button.play:hover {
 
 /* Style the tab content */
 .tabContent {
-	/margin-top: 50px;
+	margin-top: 80px;
   display: none;
   padding: 6px 12px;
   -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
 }
 
+.tabContent p {
+	color: #fff;
+}
 /* Fade in tabs */
 @-webkit-keyframes fadeEffect {
   from {opacity: 0;}

@@ -7,6 +7,15 @@ from django.http import JsonResponse
 from django.forms.models import model_to_dict
 from movies.models import Movies
 import json
+import requests_cache
+import configparser
+
+config = configparser.ConfigParser()
+config.read('/home/dev/movie_view/config.py')
+IMDB_KEY = config.get('imdb', 'key')
+MOVIES_PATH = config.get('dir', 'path')
+
+requests_cache.install_cache('movies_cache')
 
 
 def index(request):
@@ -23,7 +32,9 @@ def index(request):
 				else:
 						movie.poster_image = url
 		context = {
-				'movies': movies
+				'movies': movies,
+				'imdb_key': IMDB_KEY,
+				'movies_path': MOVIES_PATH
 		}
 
 		return render(request, 'movies/index.html', context)
